@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "",
+    "password": "root",
+    "database": "invstigacion_sistema_administrativo_express",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
