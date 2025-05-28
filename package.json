@@ -1,0 +1,20 @@
+{
+  "name": "investigacion",
+  "version": "1.0.0",
+  "description": "Investigacion Express.js",
+  "homepage": "https://github.com/JemersonRodriguez/investigacion_express#readme",
+  "bugs": {
+    "url": "https://github.com/JemersonRodriguez/investigacion_express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JemersonRodriguez/investigacion_express.git"
+  },
+  "license": "ISC",
+  "author": "Jemerson, Jean Carlo, Jonaikel",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
