@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "investigacion_sistemaadministrativo_express",
+    "database": "investigacion_sistema_administrativo_express",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
