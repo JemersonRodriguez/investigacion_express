@@ -1,14 +1,15 @@
 import jwt from 'jsonwebtoken';
 
 // Puedes poner esta clave en variables de entorno
-const SECRET_KEY = process.env.JWT_SECRET || 'tu_clave_secreta_super_segura';
+const SECRET_KEY = process.env.JWT_SECRET;
+const JWT_EXPIRATION = process.env.JWT_EXPIRATION;
 
 /**
  * Genera un token JWT con datos personalizados.
  * @param {Object} payload - Información que irá en el token.
  * @param {String} expiresIn - Tiempo de expiración (ej: '1h', '7d').
  */
-export const generarToken = (payload, expiresIn = '1h') => {
+export const generarToken = (payload, expiresIn = JWT_EXPIRATION) => {
   return jwt.sign(payload, SECRET_KEY, { expiresIn });
 };
 
@@ -19,5 +20,9 @@ export const generarToken = (payload, expiresIn = '1h') => {
  * @throws {Error} - Si el token es inválido o expiró.
  */
 export const verificarToken = (token) => {
-  return jwt.verify(token, SECRET_KEY);
+  try {
+    return jwt.verify(token, SECRET_KEY);
+  } catch (error) {
+    return null;
+  }
 };

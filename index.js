@@ -2,6 +2,7 @@ import "dotenv/config"; //Carga por medio de la libreria dotenv las variables de
 import express from "express"; // Importa el framework express para crear el servidor web
 import userRoutes from "./src/routes/userRoutes.js"; // Importa las rutas de usuario definidas en userRoutes.js
 import tareaRoutes from "./src/routes/tareaRoutes.js"; // Importa las rutas de tareas definidas en tareaRoutes.js
+import authRoutes from "./src/routes/authRoutes.js"; // Importa las rutas de autenticación definidas en authRoutes.js
 import logger from "./src/utils/logger.js"; // Importa el logger para manejar los logs de la aplicación
 
 const PORT = process.env.PORT || 3000; // Define el puerto en el que el servidor escuchará,
@@ -18,7 +19,7 @@ app.use((req, res, next) => {
 //Rutas Base
 app.use('/api/usuarios', userRoutes);
 app.use('/api/tareas' , tareaRoutes);
-//Aqui van las demas rutas, por ejemplo Tareas y Autenticación
+app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {
   console.log("Servidor corriendo en puerto " + PORT);
