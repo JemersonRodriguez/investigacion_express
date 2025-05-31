@@ -14,6 +14,12 @@ export const getTareaById = async (id) => {
   return await Tarea.findByPk(id);
 };
 
+export const getTareaByUsuarioId = async (usuarioId) => {
+  return await Tarea.findAll({ where: { usuarioId },
+  attributes: { exclude: ['usuarioId'] } 
+  });
+};
+
 export const updateTarea = async (id, data) => {
   const tarea = await Tarea.findByPk(id);
   if (!tarea) return null;
