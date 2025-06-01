@@ -1,13 +1,16 @@
-import db from '../models/index.cjs';
-import { hashPassword } from '../utils/hash.js';
+import db from "../models/index.cjs";
+import { hashPassword } from "../utils/hash.js";
 const { Usuario } = db;
 
 export const findAllUsuarios = async () => {
-  return await Usuario.findAll({ include: ['tareas'] }); // opcional: incluir tareas
+  return await Usuario.findAll({
+    where: { rol: "USER" }, // Solo usuarios USER,
+    include: ["tareas"],
+  }); // opcional: incluir tareas
 };
 
 export const findUsuarioById = async (id) => {
-  return await Usuario.findByPk(id, { include: ['tareas'] });
+  return await Usuario.findByPk(id, { include: ["tareas"] });
 };
 
 export const createUsuario = async (data) => {
