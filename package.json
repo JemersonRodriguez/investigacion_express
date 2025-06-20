@@ -11,7 +11,7 @@
     "url": "git+https://github.com/JemersonRodriguez/investigacion_express.git"
   },
   "license": "ISC",
-  "author": "Jemerson, Jean Carlo, Jonaikel",
+  "author": "Jemerson Rodriguez",
   "type": "module",
   "main": "index.js",
   "scripts": {
